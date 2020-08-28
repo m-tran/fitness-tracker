@@ -6,13 +6,12 @@ require("./models/connection");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname + '/public'));
 
 const apiRoutes = require("./routes/api-routes");
 app.use(apiRoutes);
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("Develop/build"));
+    app.use(express.static(__dirname + '/public'));
     app.get("*", (req, res) => {
         res.sendFile(path.resolve(__dirname, "Develop", "public", "index.html"));
     });
