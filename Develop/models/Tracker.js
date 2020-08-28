@@ -2,10 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const TrackerSchema = new Schema({
-    text: {
+    exercise: {
         type: String,
-        trim: true,
-        required: "String is required"
+        name: String,
+        duration: Number,
+        weight: Number,
+        reps: Number,
+        sets: Number
     }
 });
 
