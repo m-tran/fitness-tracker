@@ -10,8 +10,7 @@
     "seed": "node seeders/seed.js",
     "server": "nodemon server.js",
     "dev": "concurrently \"nodemon server.js\" \"npm run public\"",
-    "build": "cd client/ && npm install && npm run build",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "build": "npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
