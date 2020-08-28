@@ -7,11 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "client": "npm start --prefix develop",
+    "client": "npm start --prefix Develop",
     "seed": "node seeders/seed.js",
     "server": "nodemon server.js",
-    "dev": "concurrently \"nodemon server.js\" \"npm run develop\"",
-    "build": "cd develop/ && npm install && npm run build"
+    "dev": "concurrently \"nodemon server.js\" \"npm run Develop\"",
+    "build": "cd Develop/ && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
