@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const TrackerSchema = new Schema({
-    exercises: {
+    day: Date,
+    exercises: [{
         type: String,
         name: String,
         distance: Number,
@@ -10,7 +11,7 @@ const TrackerSchema = new Schema({
         weight: Number,
         reps: Number,
         sets: Number
-    },
+    }],
 },
 { typeKey: '$type' }
 );

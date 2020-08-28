@@ -20,11 +20,11 @@ router.get("/api/workouts", (req, res) => {
 });
 
 router.put("/api/workouts/:id", (req, res) => {
-    db.Tracker.create({ exercises: req.body }).then((workouts) => res.send(workouts));
+    db.Tracker.create({ day: req.query.date, exercises: req.body }).then((workouts) => res.send(workouts));
 });
 
 router.post("/api/workouts", (req, res) => {
-    db.Tracker.create({ exercises: req.body }).then((workouts) => res.send(workouts));
+    db.Tracker.create({ day: req.query.date, exercises: req.body }).then((workouts) => res.send(workouts));
 });
 
 router.get("/api/workouts/range", (req,res) => {
