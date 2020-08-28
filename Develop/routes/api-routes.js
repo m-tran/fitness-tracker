@@ -15,12 +15,21 @@ router.get("/exercise", (req, res) => {
     res.sendFile(path.resolve("public", "exercise.html"));
 });
 
-router.get("/new", (req, res) => {
-    res.send("message: success");
-    db.Tracker.create({ 
-        exercise: req.body.text 
-    }).then((exercise) => res.send(exercise));
+router.get("/api/workouts", (req, res) => {
+    db.Tracker.find().then((workouts) => res.send(workouts));
 });
 
-module.exports = router;
+router.put("/api/workouts/:id", (req, res) => {
+    db.Tracker.create({ exercises: req.body }).then((workouts) => res.send(workouts));
+});
 
+router.post("/api/workouts", (req, res) => {
+    db.Tracker.create({ exercises: req.body }).then((workouts) => res.send(workouts));
+});
+
+router.get("/api/workouts/range", (req,res) => {
+    db.Tracker.find().then((workouts) => res.send(workouts));
+});
+
+
+module.exports = router;
