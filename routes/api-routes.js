@@ -4,15 +4,15 @@ const path = require("path");
 const db = require("../models");
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join('client/public', 'index.html'));
+    res.sendFile(path.resolve('client/public', 'index.html'));
 });
 
 router.get("/stats", (req, res) => {
-    res.sendFile(path.join('client/public', 'stats.html'));
+    res.sendFile(path.resolve('client/public', 'stats.html'));
 });
 
 router.get("/exercise", (req, res) => {
-    res.sendFile(path.join('client/public', 'exercise.html'));
+    res.sendFile(path.resolve('client/public', 'exercise.html'));
 });
 
 router.get("/api/workouts", (req, res) => {
